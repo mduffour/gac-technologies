@@ -1,0 +1,12 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<strong>Number sms</strong>: {{ numberSms }}<br /><br />
+<strong>Total Call Duration After 15022012</strong>: {{ totalCallDuration }}<br /><br />
+<strong>Top 10 Invoice volume per user</strong>: 
+{% for data in infoUsersTop10 %}
+   <br /> - <i>{{ data.user_number }}</i>: {{ data.top10 is null ? 'No value' : data.top10 }}
+{% endfor %}
+
+{% endblock %}
